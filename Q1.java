@@ -1,14 +1,27 @@
-import java.util.Scanner;
-public class Q1{
-    public static void main (String arr[]){
-        int num;
-        Scanner obj = new Scanner(System.in);
-        System.out.println("Enter a number ");
-        num = obj.nextInt();
-        int total = 1;
-        for(int i=1; i<=10; i++){
-            total = num*i;
-            System.out.println(total);
+class Shape{
+    private
+        int height;
+        int weight;
+    public
+        void setHeight(int height){
+            this.height = height;
         }
+        void setWeight(int weight){
+            this.weight = weight;
+        }
+        int getHeight(){
+            return height;
+        }
+        int getWeight(){
+            return weight;
+        }
+} 
+public class Q1{
+    public static void main(String arr[]){
+        Shape s = new Shape();
+        s.setHeight(178);
+        s.setWeight(65);
+        System.out.println(s.getHeight()); 
+        System.out.println(s.getWeight());
     }
 }

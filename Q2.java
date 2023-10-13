@@ -1,29 +1,25 @@
-import java.util.Scanner;
-public class Q2{
-    public static void main(String []arrs){
-        int num1;
-        int num2;
-        char ch;
-        Scanner obj = new Scanner(System.in);
-        System.out.println("Enter two number ");
-        num1 = obj.nextInt();
-        num2 = obj.nextInt();
-        System.out.println("Enter the operator ");
-        ch = obj.next().charAt(0);
-        switch(ch){
-            case '+':
-                System.out.println(num1+num2);
-                break;
-            case '-':
-                System.out.println(num1 - num2);
-                break;
-            case '*':
-                System.out.println(num1 * num2);
-                break;
-            case '/':
-                System.out.println(num1 / num2);
-                break;
-        }
+class Mycls{
+    public
+        Mycls(){
+                System.out.println("default");
+            }
+        Mycls(int num1){ 
+                System.out.println("one param");
+                System.out.println(num1);
+
+            }
+        Mycls(int num1,int num2){
+                System.out.println("two param");
+                System.out.println(num1+" "+num2);
+
+            }
+}
+public class Q2 {
+
+    public static void main(String arr[]){
+       Mycls obj1 = new Mycls();
+       Mycls obj2 = new Mycls(23);
+       Mycls obj3 = new Mycls(2,29);
 
     }
 }
