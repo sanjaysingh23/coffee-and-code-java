@@ -1,33 +1,31 @@
-class Base{
-    // Base(){
-    //     System.out.println("Base non param");
-    // }
-    Base(int x){
-        System.out.println("Base 1 param");
-    }
-    Base(int x, int y){
-        System.err.println("Base 2 param");
+class Top1 {
+    void disp1(){
+        System.out.println("In top1 disp");
     }
 }
-class Sub extends Base{
-    Sub(){
-        super(123, 147 );
-        System.out.println("Sub non param");
+class Bottom1 extends Top1{
+    void disp1(){
+        System.out.println("In bottom1 disp");
     }
-    Sub(int a){
-        super(123);
-        System.out.println("Sub 1 param");
+}
+class Bottom2 extends Top1{
+    void disp1(){
+        System.out.println("In Bottom2 disp");
     }
-    Sub(int  b, int c){
-        super(123);
-        System.out.println("Sub 2 param");
+}
+class Bottom3 extends Top1{
+    void disp1(){
+        System.out.println("In Bottom3 disp");
     }
 }
 public class Demo4 {
     public static void main(String arr[]){
-        
-        Sub s2 = new Sub(30);
-        Sub s3 = new Sub(50, 100);
-        Sub s1 = new Sub();
+        Top1 t1 = new Bottom1();
+        t1.disp1();
+        Top1 t2 = new Bottom2();
+        t2.disp1();
+        Top1 t3 = new Bottom3();
+        t3.disp1();
     }
 }
+
