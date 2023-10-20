@@ -1,32 +1,15 @@
-class A{
-    
-        
-        static{
-            System.out.println("In class A");
-        }
-   
-
+class Base{
+    static {
+        System.out.println("In base disp");
+    }
 }
-class B{
-    
-    static{
-            System.out.println("In class B");
-        } 
-    
-}
-class C{
-    
-    static{
-            System.out.println("In class C");
-        }
-    
+class Sub extends Base{
+    static {
+        System.out.println("In sub disp");
+    }
 }
 public class Demo1 {
-    public static void main(String args[]){
-        
-        B d2 = new B();
-        C d3 = new C();
-        A d1 = new A();
+    public static void main(String arr[]){
+        Sub s = new Sub();
     }
-    
 }
