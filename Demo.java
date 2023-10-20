@@ -1,28 +1,35 @@
-class MyClass{
-    int x, y, z;
-    MyClass(){
-        System.out.println("no param ");
+abstract class Course{
+    public void start(){
+        System.out.println("Course start");
     }
-    MyClass(int x){
-        this.x = x;
-        System.out.println("1 param "+x);
+    public abstract double getFee();
+	public abstract void evaluate();
+}
+class DACDBDACourse extends Course{
+    double fee = 100000;
+    public double getFee(){
+        return fee;
     }
-    MyClass(int y, int z){
-        this.y = y;
-        this.z = z;
-        System.out.println("2 param "+(y+z));
+    public void evaluate(){
+        System.out.println("DAC DBDA Evaluated");
     }
-    void disp(){
-        System.out.println("In disp func "+ x +" "+ y +" " + z);
+}
+class MSCitCourse extends Course{
+    double fee = 80000;
+    public double getFee(){
+        return fee;
+    }
+    public void evaluate(){
+        System.out.println("Msc Evaluated");
     }
 }
 public class Demo {
+    static void perform(Course ref){
+        System.out.println(ref.getFee());
+        ref.evaluate();
+    }
     public static void main(String arr[]){
-        MyClass m1 = new MyClass();
-        MyClass m2 = new MyClass(30);
-        MyClass m3 = new MyClass(50,100);
-        m1.disp();
-        m2.disp();
-        m3.disp();
+        perform(new DACDBDACourse());
+        perform(new MSCitCourse());
     }
 }
