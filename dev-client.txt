@@ -1,0 +1,61 @@
+//  developer side code.
+
+
+package developer;
+
+public interface Shape {
+    void draw();
+}
+
+
+package developer;
+
+public class Circle implements Shape {
+    public void draw() {
+        System.out.println("Draw circle");
+    }
+}
+
+package developer;
+
+public class Rectangle implements Shape {
+    public void draw() {
+        System.out.println("Draw rectangle");
+    }
+}
+
+
+package developer;
+
+public class Triangle implements Shape {
+    public void draw() {
+        System.out.println("Draw triangle");
+    }
+}
+
+
+//client side code.
+
+package client;
+
+import developer.Shape;
+import developer.Circle;
+import developer.Rectangle;
+import developer.Triangle;
+
+public class ShapeDemo { 
+
+    public static void main(String[] args) {
+        Shape obj[] = new Shape[3];
+        obj[0] = new Triangle();
+        obj[1] = new Rectangle();
+        obj[2] = new Circle();
+        
+        for (int i = 0; i < obj.length; i++) {
+            obj[i].draw();
+        }
+    }
+}
+
+
+
