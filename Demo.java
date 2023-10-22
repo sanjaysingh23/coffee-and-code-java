@@ -1,35 +1,26 @@
-abstract class Course{
-    public void start(){
-        System.out.println("Course start");
+import java.lang.RuntimeException;
+class Exp {
+    // int num = 20;
+    void disp()throws RuntimeException
+    {
+        int num = 25;
+        if(num>20){
+            throw new RuntimeException ();
+        }
     }
-    public abstract double getFee();
-	public abstract void evaluate();
-}
-class DACDBDACourse extends Course{
-    double fee = 100000;
-    public double getFee(){
-        return fee;
-    }
-    public void evaluate(){
-        System.out.println("DAC DBDA Evaluated");
-    }
-}
-class MSCitCourse extends Course{
-    double fee = 80000;
-    public double getFee(){
-        return fee;
-    }
-    public void evaluate(){
-        System.out.println("Msc Evaluated");
+    void disp2(){
+        try{
+            disp();
+            
+        }
+        catch(RuntimeException re){
+            System.out.println("The error is "+re.getMessage());
+        }
     }
 }
-public class Demo {
-    static void perform(Course ref){
-        System.out.println(ref.getFee());
-        ref.evaluate();
-    }
+public class Demo{
     public static void main(String arr[]){
-        perform(new DACDBDACourse());
-        perform(new MSCitCourse());
+        Exp e = new Exp();
+        e.disp2();
     }
 }
