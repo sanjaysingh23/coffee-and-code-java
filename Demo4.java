@@ -1,31 +1,40 @@
-class Top1 {
-    void disp1(){
-        System.out.println("In top1 disp");
+class Artist{
+    void perform(){
+        System.out.println("Artist perform");
     }
 }
-class Bottom1 extends Top1{
-    void disp1(){
-        System.out.println("In bottom1 disp");
+class Actor extends Artist{
+    void perform(){
+        System.out.println("Actor perform");
+    }
+    void changeGateUp(){
+        System.out.println("As per the role demand");
     }
 }
-class Bottom2 extends Top1{
-    void disp1(){
-        System.out.println("In Bottom2 disp");
+class Singer extends Artist{
+    void perform(){
+        System.out.println("Singer perform");
     }
 }
-class Bottom3 extends Top1{
-    void disp1(){
-        System.out.println("In Bottom3 disp");
-    }
-}
-public class Demo4 {
-    public static void main(String arr[]){
-        Top1 t1 = new Bottom1();
-        t1.disp1();
-        Top1 t2 = new Bottom2();
-        t2.disp1();
-        Top1 t3 = new Bottom3();
-        t3.disp1();
+class Musician extends Artist{
+    void perform(){
+        System.out.println("Musician perform");
     }
 }
 
+public class Demo4 {
+    public static void main(String arr[]){
+        Artist arrArtist[] = new Artist[3];
+        arrArtist[0] = new Actor();
+        arrArtist[1] = new Singer();
+        arrArtist[2] = new Musician();
+        for(int i=0; i<arrArtist.length;i++){
+            arrArtist[i].perform();
+            if(arrArtist[i] instanceof Actor){
+                Actor ref = (Actor)arrArtist[i];
+                ref.changeGateUp();
+            }
+        }
+    }
+    
+}
