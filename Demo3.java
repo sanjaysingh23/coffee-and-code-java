@@ -1,40 +1,36 @@
-import java.util.Scanner;
-class MyException extends Exception{
-    MyException(String msg){
-        super(msg);
+class A{
+    void funA(){
+        System.out.println("In function A");
     }
 }
-
+class B{
+    void funB(){
+        System.out.println("In function B");
+    }
+}
+class C{
+    void funC(){
+        System.out.println("In function C");
+    }
+}
+class D{
+    void funD(){
+        System.out.println("In function D");
+    }
+}
 public class Demo3 {
-    public void show1(){
-        show2();
-    }
-    public void show2(){
-        try{
-            show3();
-        }
-        catch(MyException me)
-        {
-            System.out.println(me);
-        }
-    }
-    public void show3()throws MyException
-    {
-        int num ;
-        System.out.println("Enter a number");
-        Scanner obj = new Scanner(System.in);
-        num = obj.nextInt();
-        
-        if(num > 10){
-            throw new MyException("Number greater then 10 is not allowed");
-        }
-        else{
-            System.out.println("The number is "+num);
-        }
-        
-    }
     public static void main(String arr[]){
-        Demo3 d = new Demo3();
-        d.show1();
+        Object arrDemo3[] = new Object[4];
+        arrDemo3[0] = new A(); 
+        arrDemo3[1] = new B(); 
+        arrDemo3[2] = new C(); 
+        arrDemo3[3] = new D(); 
+    
+        for(int i=0; i<arrDemo3.length;i++){
+            if(arrDemo3[i] instanceof C){
+                C ref = (C)arrDemo3[i];
+                ref.funC();
+            }
+        }
     }
 }
