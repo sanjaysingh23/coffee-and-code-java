@@ -1,17 +1,13 @@
-interface Emp{
-    abstract void disp1();
-    default void disp2(){
-        System.out.println("disp2");
-    }
-    static void disp3(){
-        System.out.println("Disp3");
-    }
+interface First{
+    void disp();
 }
 public class Demo1{
+    void fun1(){
+        System.out.println("In fun1");
+    }
     public static void main(String args[]){
-        Emp ref = ()->{System.out.println("disp1");};
-        ref.disp1();
-        ref.disp2();
-        Emp.disp3();
+        Demo1 d = new Demo1();
+        First ref = d::fun1;
+        ref.disp();
     }
 }
